@@ -1,0 +1,83 @@
+// There are three implenetations of the function  factoial
+// use each implementation in a seperate file. 
+
+#include <iostream>
+
+// Function to calculate the factorial of a non-negative integer using a while loop
+unsigned long long factorialWhileLoop(int n) {
+    if (n < 0) {
+        return 0; // Factorial is not defined for negative numbers
+    }
+    
+    unsigned long long result = 1;
+    while (n > 0) {
+        result *= n;
+        n--;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> n;
+    
+    unsigned long long result = factorialWhileLoop(n);
+    std::cout << "Factorial of " << n << " is " << result << std::endl;
+    
+    return 0;
+}
+
+#include <iostream>
+
+// Function to calculate the factorial of a non-negative integer using a for loop
+unsigned long long factorialForLoop(int n) {
+    if (n < 0) {
+        return 0; // Factorial is not defined for negative numbers
+    }
+    
+    unsigned long long result = 1;
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> n;
+    
+    unsigned long long result = factorialForLoop(n);
+    std::cout << "Factorial of " << n << " is " << result << std::endl;
+    
+    return 0;
+}
+
+#include <iostream>
+
+// Function to calculate the factorial of a non-negative integer using a do-while loop
+unsigned long long factorialDoWhileLoop(int n) {
+    if (n < 0) {
+        return 0; // Factorial is not defined for negative numbers
+    }
+    
+    unsigned long long result = 1;
+    int i = 1;
+    do {
+        result *= i;
+        i++;
+    } while (i <= n);
+    return result;
+}
+
+int main() {
+    int n;
+    std::cout << "Enter a non-negative integer: ";
+    std::cin >> n;
+    
+    unsigned long long result = factorialDoWhileLoop(n);
+    std::cout << "Factorial of " << n << " is " << result << std::endl;
+    
+    return 0;
+}
